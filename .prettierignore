@@ -1,0 +1,17 @@
+# Ignore artifacts:
+node_modules
+dist
+.build
+build
+.vscode
+.DS_Store
+public
+
+# Ignore lockfiles
+package-lock.json
+
+# Ignore local env
+.env
+
+# Ignore IDE/project files
+*.log

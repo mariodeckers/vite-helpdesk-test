@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint", // when also using eslint
+    "bradlc.vscode-tailwindcss", // when also using Tailwind
+    "ms-vscode.vscode-typescript-next", // you are probably using TypeScript
+  ]
+}

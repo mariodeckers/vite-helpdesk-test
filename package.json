@@ -1,0 +1,43 @@
+{
+  "name": "vite-helpdesk-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:frontend dev:backend",
+    "dev:frontend": "vite --open",
+    "dev:backend": "convex dev",
+    "build": "tsc -b && vite build",
+    "lint": "tsc && eslint .  --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@convex-dev/auth": "^0.0.90",
+    "convex": "^1.29.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@convex-dev/eslint-plugin": "^1.0.0",
+    "@eslint/js": "^9.21.0",
+    "@tailwindcss/vite": "^4.0.14",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^5.0.0",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.5.0",
+    "npm-run-all2": "^8.0.4",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "tailwindcss": "^4.0.14",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2",
+    "vite": "^7.2.2"
+  }
+}
