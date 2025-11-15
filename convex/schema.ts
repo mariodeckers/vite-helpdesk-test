@@ -10,6 +10,10 @@ export default defineSchema({
 
   users: defineTable({
     email: v.string(),
+    emailVerificationTime: v.optional(v.float64()),
+    image: v.optional(v.string()),
+    isAnonymous: v.optional(v.boolean()),
+    name: v.optional(v.string()),
     firstName: v.optional(v.string()),
     lastName: v.optional(v.string()),
     profilePictureUrl: v.optional(v.string()),
@@ -17,7 +21,7 @@ export default defineSchema({
       v.union(v.literal("user"), v.literal("agent"), v.literal("admin")),
     ),
     updatedAt: v.optional(v.number()),
-  }).index("by_email", ["email"]),
+  }).index("email", ["email"]),
 
   numbers: defineTable({
     value: v.number(),
