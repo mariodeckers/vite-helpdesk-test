@@ -1,22 +1,34 @@
+import { Button } from "@/components/ui/button"
 import { useAuthActions } from "@convex-dev/auth/react"
 import { useState } from "react"
+import { useNavigate } from "react-router"
 
 export default function SignInForm() {
   const { signIn } = useAuthActions()
+  const navigate = useNavigate()
   const [flow, setFlow] = useState<"signIn" | "signUp">("signIn")
   const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.target as HTMLFormElement)
+    formData.set("flow", flow)
+
+    try {
+      await signIn("password", formData)
+      await navigate("/tickets")
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "An error occurred")
+    }
+  }
+
   return (
     <div className="mx-auto flex w-96 flex-col gap-8">
       <p>Log in to see the numbers</p>
       <form
         className="flex flex-col gap-2"
         onSubmit={(e) => {
-          e.preventDefault()
-          const formData = new FormData(e.target as HTMLFormElement)
-          formData.set("flow", flow)
-          void signIn("password", formData).catch((error) => {
-            setError(error.message)
-          })
+          void handleSubmit(e)
         }}
       >
         <input
@@ -31,12 +43,9 @@ export default function SignInForm() {
           name="password"
           placeholder="Password"
         />
-        <button
-          className="bg-primary text-primary-foreground rounded-md p-2"
-          type="submit"
-        >
+        <Button type="submit">
           {flow === "signIn" ? "Sign in" : "Sign up"}
-        </button>
+        </Button>
         <div className="flex flex-row gap-2">
           <span>
             {flow === "signIn"

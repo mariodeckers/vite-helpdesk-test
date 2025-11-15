@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="text-muted-foreground text-sm">
-            © 2024 HelpDesk. All rights reserved.
+            © 2025 HelpDesk. All rights reserved.
           </div>
           <div className="text-muted-foreground flex items-center space-x-4 text-sm">
             <a href="#" className="hover:text-foreground transition-colors">

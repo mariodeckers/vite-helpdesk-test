@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import { useAuthActions } from "@convex-dev/auth/react"
 import { useConvexAuth } from "convex/react"
 
@@ -7,12 +8,7 @@ export default function SignOutButton() {
   return (
     <>
       {isAuthenticated && (
-        <button
-          className="text-primary-foreground bg-primary rounded-md px-2 py-1"
-          onClick={() => void signOut()}
-        >
-          Sign out
-        </button>
+        <Button onClick={() => void signOut()}>Sign out</Button>
       )}
     </>
   )
