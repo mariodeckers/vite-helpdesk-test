@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 export default function Header() {
   return (
-    <header className="bg-background border-b">
+    <header className="bg-background sticky top-0 z-50 border-b">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-6">
